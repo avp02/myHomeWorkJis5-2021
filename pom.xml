@@ -9,10 +9,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <sonar.projectKey>javaGuruBY_java-free-stream-5</sonar.projectKey>
-        <sonar.organization>javaguruby</sonar.organization>
+        <sonar.projectKey>avp02_myHomeWorkJis5-2021</sonar.projectKey>
+        <sonar.organization>avp02</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>d4a43c92cc5b4686b432aa2bcfea10d230cc5b73</sonar.login>
+        <sonar.login>b67eacea0d6bbc6c94d14eb1078b27b45bd01e60</sonar.login>
         <!--        <slf4j.version>2.0.0-alpha0</slf4j.version>-->
     </properties>
 

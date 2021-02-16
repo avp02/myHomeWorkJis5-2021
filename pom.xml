@@ -13,7 +13,6 @@
         <sonar.organization>avp02</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.login>b67eacea0d6bbc6c94d14eb1078b27b45bd01e60</sonar.login>
-        <!--        <slf4j.version>2.0.0-alpha0</slf4j.version>-->
     </properties>
 
     <dependencies>
@@ -28,7 +27,6 @@
             <version>5.6.3</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>

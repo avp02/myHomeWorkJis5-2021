@@ -1,6 +1,6 @@
 package com.avp.lesson1.task3_mathOperations.service;
 
-import com.avp.lesson1.task3_mathOperations.bean.MathOperations;
+import com.avp.lesson1.task3_mathOperations.bean.VariablesForMathOperations;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -11,14 +11,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MathOperationsServiceTest {
 
-    private static MathOperations mathTest;
+    private static VariablesForMathOperations mathTest;
     private static MathOperationsService test;
     private static final Logger log = LoggerFactory.getLogger(MathOperationsServiceTest.class);
 
     @BeforeAll
     static void beforeAll() {
 
-        mathTest = new MathOperations();
+        mathTest = new VariablesForMathOperations();
         test = new MathOperationsService(mathTest);
     }
 

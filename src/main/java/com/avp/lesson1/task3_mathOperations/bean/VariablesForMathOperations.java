@@ -2,11 +2,11 @@ package com.avp.lesson1.task3_mathOperations.bean;
 
 import java.util.Objects;
 
-public class MathOperations {
+public class VariablesForMathOperations {
     private double a;
     private double b;
 
-    public MathOperations() {
+    public VariablesForMathOperations() {
     }
 
     public double getA() {
@@ -29,7 +29,7 @@ public class MathOperations {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MathOperations that = (MathOperations) o;
+        VariablesForMathOperations that = (VariablesForMathOperations) o;
         return Double.compare(that.a, a) == 0 && Double.compare(that.b, b) == 0;
     }
 

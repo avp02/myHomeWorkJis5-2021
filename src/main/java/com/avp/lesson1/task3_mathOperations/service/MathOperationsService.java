@@ -1,12 +1,12 @@
 package com.avp.lesson1.task3_mathOperations.service;
 
-import com.avp.lesson1.task3_mathOperations.bean.MathOperations;
+import com.avp.lesson1.task3_mathOperations.bean.VariablesForMathOperations;
 
 public class MathOperationsService {
 
-    private final MathOperations math;
+    private final VariablesForMathOperations math;
 
-    public MathOperationsService(MathOperations math) {
+    public MathOperationsService(VariablesForMathOperations math) {
         this.math = math;
     }
 

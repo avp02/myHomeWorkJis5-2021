@@ -19,7 +19,7 @@ public class ArraySortSwapServiceDemo {
 
         ArraySortSwapService svc = new ArraySortSwapService();
         svc.sort(a1);
-        log.info(Arrays.toString(a1));
+        log.info( Arrays.toString(a1));
         svc.swap(a2);
         log.info(Arrays.toString(a2));
     }

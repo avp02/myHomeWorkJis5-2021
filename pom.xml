@@ -9,10 +9,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <sonar.projectKey>javaGuruBY_java-free-stream-5</sonar.projectKey>
-        <sonar.organization>javaguruby</sonar.organization>
+        <sonar.projectKey>avp02_myHomeWorkJis5-2021</sonar.projectKey>
+        <sonar.organization>avp02</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>d4a43c92cc5b4686b432aa2bcfea10d230cc5b73</sonar.login>
+        <sonar.login>b67eacea0d6bbc6c94d14eb1078b27b45bd01e60</sonar.login>
     </properties>
 
     <dependencies>
@@ -46,10 +46,28 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
                 <configuration>
-                    <source>15</source>
-                    <target>15</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.2.0-M1</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.2.0-M1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
@@ -90,5 +108,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>

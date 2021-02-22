@@ -13,23 +13,27 @@ void printVocabulary() - должен распечатать в консоли �
 В качестве базовой коллекции нужно использовать Set.
  */
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedHashSet;
 
 public class UniqueWordVocabularyService {
-    public void addWord(String word) {
-        Set<String> words = new HashSet<>();
-        words.addAll(Arrays.asList(word));
+
+    public void addWord(LinkedHashSet<String> list, String word) {
+        String[] array = word.split("[\\p{Punct}\\s]+");
+        for (String s : array) {
+            list.add(s);
+        }
+
     }
 
-    public int getWordsCount() {
-        Set<String> words = new HashSet<>();
-        return 0;
+    public int getWordsCount(LinkedHashSet<String> list) {
+        return list.size();
     }
 
-    public void printVocabulary() {
-
+    public String printVocabulary(LinkedHashSet<String> list) {
+        String str = "";
+        for (String s : list) {
+            str += s + " ";
+        }
+        return str;
     }
 }

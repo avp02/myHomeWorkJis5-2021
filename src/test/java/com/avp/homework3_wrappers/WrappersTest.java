@@ -33,13 +33,12 @@ public class WrappersTest {
         assertEquals((byte) -128, c);
         assertFalse(c.equals((byte)-130));
 
-//        Byte j = 12;
-//        Byte i = j;
-//        assertTrue(i == j);
 
-        Byte k = new Byte((byte)12);
-        Byte l = new Byte(k);
-        Byte d = new Byte(k);
-        assertTrue(d.equals(l));
+        Byte k = 12;
+        Byte l = k;
+        assertTrue(k.equals(l));
+        k = (byte)(k +13);
+        assertFalse(k.equals(l)); //это доказывает, что классы обертки являются неизменяемыми
+
     }
 }

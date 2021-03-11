@@ -13,7 +13,7 @@ public class UserValidationService {
             throw new UserValidationException("It's wrong data. Try again");
         }
         if (user.getAge() < 0 || user.getAge() > 120) {
-            throw new UserValidationException("It's wrong data. Try again");
+            throw new UserValidationException(new RuntimeException());
         }
     }
 }

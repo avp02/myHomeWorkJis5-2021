@@ -2,7 +2,7 @@ package com.avp.homework7objectsinmemory.task4tvandtvconroller.service;
 
 import com.avp.homework7objectsinmemory.task4tvandtvconroller.bean.Tv;
 
-public class TvService {
+public class TvService implements InterfaceTvService {
 
     private final Tv tv;
 
@@ -10,27 +10,27 @@ public class TvService {
         this.tv = tv;
     }
 
-    void switchChannelOneForward() {
+    public void switchChannelOneForward() {
         tv.setCurrentChannel(tv.getCurrentChannel() + 1);
     }
 
-    void switchChannelOneBack() {
+    public void switchChannelOneBack() {
         tv.setCurrentChannel(tv.getCurrentChannel() - 1);
     }
 
-    void increaseSoundOne(Tv testTv, TvService testTvService) {
+    public void increaseSoundOne() {
         tv.setCurrentSound(tv.getCurrentSound() + 1);
     }
 
-    void reduceSoundByOne() {
+    public void reduceSoundByOne() {
         tv.setCurrentSound(tv.getCurrentSound() - 1);
     }
 
-    void turnOnTv() {
+    public void turnOnTv() {
         tv.setTurnOnTv(true);
     }
 
-    void turnOffTv() {
+    public void turnOffTv() {
         tv.setTurnOnTv(false);
     }
 }

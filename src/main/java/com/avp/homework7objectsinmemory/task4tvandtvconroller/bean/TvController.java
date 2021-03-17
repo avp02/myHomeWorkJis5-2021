@@ -19,7 +19,7 @@ public class TvController extends Tv {
 
     private boolean tvTurnOn;
 
-    public boolean isTvTurnOn() {
+    public boolean getTvTurnOn() {
         return tvTurnOn;
     }
 

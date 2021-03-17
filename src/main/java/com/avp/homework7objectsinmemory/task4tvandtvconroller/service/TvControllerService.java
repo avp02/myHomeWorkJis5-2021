@@ -6,10 +6,8 @@ import com.avp.homework7objectsinmemory.task4tvandtvconroller.bean.TvController;
 public class TvControllerService implements InterfaceTvService{
 
     private final TvController tvController;
-    private final Tv tv;
 
-    public TvControllerService(Tv tv, TvController tvController) {
-        this.tv = tv;
+    public TvControllerService(TvController tvController) {
         this.tvController = tvController;
     }
 
@@ -21,7 +19,7 @@ public class TvControllerService implements InterfaceTvService{
     public void switchChannelOneForward() {
         setTurnOn();
         if (tvController.getTvTurnOn()) {
-            tv.setCurrentChannel(tv.getCurrentChannel() + 1);
+            tvController.setCurrentChannel(tvController.getCurrentChannel() + 1);
         }
     }
 
@@ -29,7 +27,7 @@ public class TvControllerService implements InterfaceTvService{
     public void switchChannelOneBack() {
         setTurnOn();
         if (tvController.getTvTurnOn()) {
-            tv.setCurrentChannel(tv.getCurrentChannel() - 1);
+            tvController.setCurrentChannel(tvController.getCurrentChannel() - 1);
         }
     }
 
@@ -37,7 +35,7 @@ public class TvControllerService implements InterfaceTvService{
     public void increaseSoundOne() {
         setTurnOn();
         if (tvController.getTvTurnOn()) {
-            tv.setCurrentSound(tv.getCurrentSound() + 1);
+            tvController.setCurrentSound(tvController.getCurrentSound() + 1);
         }
     }
 
@@ -45,7 +43,7 @@ public class TvControllerService implements InterfaceTvService{
     public void reduceSoundByOne() {
         setTurnOn();
         if (tvController.getTvTurnOn()) {
-            tv.setCurrentSound(tv.getCurrentSound() -1);
+            tvController.setCurrentSound(tvController.getCurrentSound() -1);
         }
     }
 
@@ -53,7 +51,7 @@ public class TvControllerService implements InterfaceTvService{
     public void turnOnTv() {
         setTurnOn();
         if (tvController.getTvTurnOn()) {
-            tv.setTurnOnTv(true);
+            tvController.setTurnOnTv(true);
         }
     }
 
@@ -61,7 +59,7 @@ public class TvControllerService implements InterfaceTvService{
     public void turnOffTv() {
         setTurnOn();
         if (tvController.getTvTurnOn()) {
-            tv.setTurnOnTv(false);
+            tvController.setTurnOnTv(false);
         }
     }
 }

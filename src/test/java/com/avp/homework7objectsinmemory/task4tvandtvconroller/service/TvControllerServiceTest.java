@@ -1,6 +1,5 @@
 package com.avp.homework7objectsinmemory.task4tvandtvconroller.service;
 
-import com.avp.homework7objectsinmemory.task4tvandtvconroller.bean.Tv;
 import com.avp.homework7objectsinmemory.task4tvandtvconroller.bean.TvController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,24 +11,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class TvControllerServiceTest {
 
     private static final Logger log = LoggerFactory.getLogger(TvControllerServiceTest.class);
-    private Tv testTv;
     private TvController testTvController;
     private TvControllerService test;
 
     @BeforeEach
     void beforeEach() {
-        testTv = new Tv();
         testTvController = new TvController();
-        test = new TvControllerService(testTv, testTvController);
-        testTv.setCurrentChannel(3);
-        testTv.setCurrentSound(15);
+        test = new TvControllerService(testTvController);
+        testTvController.setCurrentChannel(3);
+        testTvController.setCurrentSound(15);
     }
 
     @Test
     void IncreaseSound() {
         test.increaseSoundOne();
         int expected = 16;
-        int actual = testTv.getCurrentSound();
+        int actual = testTvController.getCurrentSound();
         log.info("I expected that sound will be {} and it equals {}", expected, actual);
         assertEquals(expected, actual);
     }
@@ -38,7 +35,7 @@ class TvControllerServiceTest {
     void switchChannelOneForward() {
         test.switchChannelOneForward();
         int expected = 4;
-        int actual = testTv.getCurrentChannel();
+        int actual = testTvController.getCurrentChannel();
         log.info("I expected that channel will be {} and it equals {}", expected, actual);
         assertEquals(expected, actual);
     }
@@ -46,7 +43,7 @@ class TvControllerServiceTest {
     @Test
     void turnOffTv() {
         test.turnOffTv();
-        boolean actual = testTv.isTurnOnTv();
+        boolean actual = testTvController.isTurnOnTv();
         log.info("I expected that Tv turn off and it equals {}", actual);
         assertFalse(actual);
     }
@@ -55,7 +52,7 @@ class TvControllerServiceTest {
     void switchChannelOneBack() {
         test.switchChannelOneBack();
         int expected = 2;
-        int actual = testTv.getCurrentChannel();
+        int actual = testTvController.getCurrentChannel();
         log.info("I expected that channel will be {} and it equals {}", expected, actual);
         assertEquals(expected, actual);
     }
@@ -64,7 +61,7 @@ class TvControllerServiceTest {
     void reduceSoundByOne() {
         test.reduceSoundByOne();
         int expected = 14;
-        int actual = testTv.getCurrentSound();
+        int actual = testTvController.getCurrentSound();
         log.info("I expected that sound will be {} and it equals {}", expected, actual);
         assertEquals(expected, actual);
     }
@@ -72,7 +69,7 @@ class TvControllerServiceTest {
     @Test
     void turnOnTv() {
         test.turnOnTv();
-        boolean actual = testTv.isTurnOnTv();
+        boolean actual = testTvController.isTurnOnTv();
         log.info("I expected that Tv turn off and it equals {}", actual);
         assertTrue(actual);
     }

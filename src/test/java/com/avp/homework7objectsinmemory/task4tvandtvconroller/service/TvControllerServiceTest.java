@@ -23,7 +23,7 @@ class TvControllerServiceTest {
     }
 
     @Test
-    void IncreaseSound() {
+    void increaseSound() {
         test.increaseSoundOne();
         int expected = 16;
         int actual = testTvController.getCurrentSound();

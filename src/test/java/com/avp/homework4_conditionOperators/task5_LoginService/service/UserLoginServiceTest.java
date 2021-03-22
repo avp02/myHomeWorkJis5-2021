@@ -22,38 +22,33 @@ class UserLoginServiceTest {
 
     @Test
     void loginTestShouldReturnTrue() {
-        UserLoginService testUserLoginService = new UserLoginService();
         User testUser = new User("User", "1234");
         boolean actual = testUserLoginService.login(testUser, "1234");
-        boolean expected = true;
         log.info("Test return {} because password correct",
                 testUserLoginService.login(testUser, "1234"));
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
     @Test
     public void loginTestShouldReturnFalse() {
         boolean actual = testUserLoginService.login(testUser, "12345");
-        boolean expected = false;
         log.info("Test return {} because password invalid",
                 testUserLoginService.login(testUser, "12345"));
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @Test
     public void checkIfPasswordMatchUserPasswordShouldReturnTrue() {
         boolean actual = testUserLoginService.comparePasswords(testUser, "1234");
-        boolean expected = true;
         log.info("Test return {} because password correct",
                 testUserLoginService.comparePasswords(testUser, "1234"));
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
     @Test
     public void checkIfPasswordMatchUserPasswordShouldReturnFalse() {
         boolean actual = testUserLoginService.comparePasswords(testUser, "12345");
-        boolean expected = false;
         log.info("Test return {} because password invalid",
                 testUserLoginService.comparePasswords(testUser, "12345"));
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @Test
@@ -69,25 +64,22 @@ class UserLoginServiceTest {
     @Test
     public void isUserBlockedShouldReturnTrue() {
         testUser.setBlocked(true);
-        boolean expected = true;
         boolean actual = testUserLoginService.isUserBlocked(testUser);
         log.info("Test return {} because user is blocked",
                 testUserLoginService.isUserBlocked(testUser));
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
     @Test
     public void isUserBlockedShouldReturnFalse() {
         testUser.setBlocked(false);
-        boolean expected = false;
         boolean actual = testUserLoginService.isUserBlocked(testUser);
         log.info("Test return {} because user isn't blocked",
                 testUserLoginService.isUserBlocked(testUser));
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @Test
     public void decrementLoginAttemptLeft() {
-
         testUser.setCountOfLoginAttempts(3);
         int expected = 2;
         testUserLoginService.decrementCountOfLoginAttempts(testUser);
@@ -99,22 +91,20 @@ class UserLoginServiceTest {
 
     @Test
     public void blockUser() {
-        boolean expected = true;
         testUserLoginService.blockUser(testUser);
         boolean actual = testUser.isBlocked();
         log.info("Test return {} because user is blocked",
                 testUser.isBlocked());
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
     public void ifLoginAttemptLeftIsLeft() {
         testUser.setCountOfLoginAttempts(1);
-        boolean expected = true;
-        boolean actual = testUserLoginService.IsLoginAttemptsLeft(testUser);
+        boolean actual = testUserLoginService.isLoginAttemptsLeft(testUser);
         log.info("Test return {} because attempts left > 0",
-                testUserLoginService.IsLoginAttemptsLeft(testUser));
-        assertEquals(expected, actual);
+                testUserLoginService.isLoginAttemptsLeft(testUser));
+        assertTrue(actual);
     }
 
     @Test
@@ -122,19 +112,17 @@ class UserLoginServiceTest {
         testUser.setCountOfLoginAttempts(1);
         testUserLoginService.login(testUser, "12345");
         boolean actual = testUser.isBlocked();
-        boolean expected = true;
         log.info("Test return {} and blocked user because attempts left = 0",
                 testUser.isBlocked());
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
     @Test
     public void loginShouldNotProceed() {
         testUser.setCountOfLoginAttempts(0);
         testUser.setBlocked(true);
         boolean actual = testUserLoginService.login(testUser, "1234");
-        boolean expected = false;
         log.info("Test return {} and blocked user because user is blocked",
                 testUserLoginService.login(testUser, "1234"));
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 }

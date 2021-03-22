@@ -65,11 +65,7 @@ public class CarService {
     }
 
     public boolean isStopped() {
-        boolean stop = false;
-        if (car.getCurrentSpeed() == 0) {
-            stop = true;
-        }
-        return stop;
+        return car.getCurrentSpeed() == 0;
     }
 
     public boolean canAccelerate() {

@@ -30,9 +30,6 @@ public class CarService {
                 "Speed has be more zero, try one more time");
         if (car.getMaxSpeed() >= targetSpeed) {
             for (int i = car.getCurrentSpeed(); i <= targetSpeed; i++) {
-//                if (car.getCurrentSpeed() > targetSpeed) {
-//                    break;
-//                }
                 car.setCurrentSpeed(i);
             }
         } else {
@@ -65,11 +62,7 @@ public class CarService {
     }
 
     public boolean isStopped() {
-        boolean stop = false;
-        if (car.getCurrentSpeed() == 0) {
-            stop = true;
-        }
-        return stop;
+        return car.getCurrentSpeed() == 0;
     }
 
     public boolean canAccelerate() {

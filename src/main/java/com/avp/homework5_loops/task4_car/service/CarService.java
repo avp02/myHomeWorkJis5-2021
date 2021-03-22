@@ -29,14 +29,14 @@ public class CarService {
         if (targetSpeed < 0) throw new IllegalArgumentException(
                 "Speed has be more zero, try one more time");
         if (car.getMaxSpeed() >= targetSpeed) {
-            for (int i = 0; i <= targetSpeed; i++) {
-                if (car.getCurrentSpeed() > targetSpeed) {
-                    break;
-                }
+            for (int i = car.getCurrentSpeed(); i <= targetSpeed; i++) {
+//                if (car.getCurrentSpeed() > targetSpeed) {
+//                    break;
+//                }
                 car.setCurrentSpeed(i);
             }
         } else {
-            for (int i = 0; i <= car.getMaxSpeed(); i++) {
+            for (int i = car.getCurrentSpeed(); i <= car.getMaxSpeed(); i++) {
                 car.setCurrentSpeed(i);
             }
         }

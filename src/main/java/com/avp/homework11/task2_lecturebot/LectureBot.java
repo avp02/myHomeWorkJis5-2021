@@ -12,7 +12,7 @@ public class LectureBot {
         Random random = new Random();
         for (int i = 0; i < strings[0].length; i++) {
             int anyIndexFromLine = random.nextInt(strings.length);
-            result += " " + strings[anyIndexFromLine][i];
+            result += strings[anyIndexFromLine][i] + " ";
         }
         return result;
     }

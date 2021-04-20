@@ -7,7 +7,6 @@ public class StringStringBuilderApp {
     private static final Logger log = LoggerFactory.getLogger(StringStringBuilderApp.class);
 
     public static void main(String[] args) {
-        var demo = new StringStringBuilder();
-        log.info("{}", demo.buildPhraseFromWords("Выбирать ", "решения ", "- ", "это ", "легко."));
+
     }
 }

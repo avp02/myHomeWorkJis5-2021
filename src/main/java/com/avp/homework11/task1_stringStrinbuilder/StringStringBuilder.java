@@ -10,6 +10,19 @@ package com.avp.homework11.task1_stringStrinbuilder;
  */
 
 public class StringStringBuilder {
+
+    public String collectPhraseFromText(String text, String phrase) {
+        StringBuilder sb = new StringBuilder();
+
+        String[] arrayPhrase = phrase.split(" ");
+        for (String  s : arrayPhrase) {
+            if(text.contains(s)) {
+                sb.append(s).append(" ");
+            }
+        }
+        sb.insert(sb.length() - 1, ".");
+        return sb.toString().trim();
+    }
     public String buildPhraseFromWords(String...arg){
         if(arg == null) {
             throw new NullPointerException();

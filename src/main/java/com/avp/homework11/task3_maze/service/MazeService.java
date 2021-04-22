@@ -30,7 +30,7 @@ public class MazeService {
 
     private void firstLogging() {
         log.info("Вот так выглядит лабиринт.");
-        log.info("{}", (Object) maze.getFieldFromGame());
+        printGameField(maze.getFieldFromGame());
         log.info("Твоя задача дойти от верхнего левого угла до правого нижнего по \"+\".\n " +
                 "Для передвижения по лабиринту используй кдавиши  \"w\" -- вверх,\n " +
                 "\"s\" -- вниз, \"a\" -- влево, \"d\" -- вправо.\n " +
@@ -59,10 +59,10 @@ public class MazeService {
     }
 
     private void checkRight() {
-        if (j < 9 && maze.getFieldFromGame()[i][j + 1].equals("+")) {
+        if (j < maze.getFieldFromGame().length - 1 && maze.getFieldFromGame()[i][j + 1].equals("+")) {
             maze.getFieldFromGame()[i][j + 1] = "X";
             maze.getFieldFromGame()[i][j] = "+";
-            log.info("{}", (Object) maze.getFieldFromGame());
+            printGameField(maze.getFieldFromGame());
             j++;
         } else {
             log.info("Выберите другой путь");
@@ -73,7 +73,7 @@ public class MazeService {
         if (j > 0 && maze.getFieldFromGame()[i][j - 1].equals("+")) {
             maze.getFieldFromGame()[i][j - 1] = "X";
             maze.getFieldFromGame()[i][j] = "+";
-            log.info("{}", (Object) maze.getFieldFromGame());
+            printGameField(maze.getFieldFromGame());
             j--;
         } else {
             log.info("Выберите другой путь");
@@ -81,10 +81,10 @@ public class MazeService {
     }
 
     private void checkDown() {
-        if (i < 9 && maze.getFieldFromGame()[i + 1][j].equals("+")) {
+        if (i < maze.getFieldFromGame().length - 1 && maze.getFieldFromGame()[i + 1][j].equals("+")) {
             maze.getFieldFromGame()[i + 1][j] = "X";
             maze.getFieldFromGame()[i][j] = "+";
-            log.info("{}", (Object) maze.getFieldFromGame());
+            printGameField(maze.getFieldFromGame());
             i++;
         } else {
             log.info("Выберите другой путь");
@@ -95,10 +95,20 @@ public class MazeService {
         if (i > 0 && maze.getFieldFromGame()[i - 1][j].equals("+")) {
             maze.getFieldFromGame()[i - 1][j] = "X";
             maze.getFieldFromGame()[i][j] = "+";
-            log.info("{}", (Object) maze.getFieldFromGame());
+            printGameField(maze.getFieldFromGame());
             i--;
         } else {
             log.info("Выберите другой путь");
+        }
+    }
+
+    private void printGameField(String[][] array) {
+        for (String[] strings : array) {
+            StringBuilder sb = new StringBuilder();
+            for (int l = 0; l < array[0].length; l++) {
+                sb.append(strings[l]).append(" ");
+            }
+            log.info("{}", sb);
         }
     }
 }

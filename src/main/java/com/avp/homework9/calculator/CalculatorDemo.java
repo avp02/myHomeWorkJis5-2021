@@ -34,7 +34,6 @@ public class CalculatorDemo {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter numbers and mathematical operation");
-
         MethodsService methodsService = new MethodsService();
         ExecutorService demo = new ExecutorService(methodsService);
         try {
